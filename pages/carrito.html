@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body>
+    <header class="header">
+        
+        <div class="div-logo"><a class="logo" href="../index.html"/>
+            <img src="../imagenes/logo.jpg" alt="Shopping de Facturas" />
+            <span class="texto-logo">Shopping de Facturas</span>
+            </a>
+        </div>
+
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    <a href="../index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="./contacto.html">Contacto</a>
+                </li>
+                <!--agregar un link al carrito, con un ID para el contador -->
+                <li>
+                    <a href="./carrito.html"class="carrito-icono">
+                      <img src="../imagenes/carrito.jpg" alt="Carrito de compras" class="img-carrito" />
+                      <span id="contador-carrito">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Carrito de compras</h1>
+        <section id="contenedor-carrito" class="contenedor-tarjetas">
+            <!--Productos del carrito -->
+        </section>
+        <div id="acciones-carrito" class="acciones-carrito">
+            <!--Botones de eliminar y finalizar compra se agregan desde JS -->
+        </div>
+        <section id="resumen-carrito">
+            <!--Aca ira el resumen del carrito-->
+        </section>
+    </main>
+
+    <footer>
+      <p>Sitio realizado por Olga para Talento Tech</p>
+      <nav>
+        <ul class="footer-list">
+          <li><img src="../imagenes/whatsapp.png" alt="logo-whatsapp" /></li>
+          <li>
+            <img src="../imagenes/instagram_icon.png" alt="logo-instagram" />
+          </li>
+        </ul>
+      </nav>
+    </footer>
+
+    <!--Agregar type module y enlace al carrito.js-->
+    <script type="module" src="../js/carrito.js"></script>
+    
+</body>
+</html>

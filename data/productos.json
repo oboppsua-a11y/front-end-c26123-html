@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Budín de naranja",
+    "descripcion": "Budín glaseado",
+    "precio": 6500,
+    "img": "imagenes/budín de naranja.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Croissants",
+    "descripcion": "Rellenos",
+    "precio": 4500,
+    "img": "imagenes/croissants.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Facturas con dulce",
+    "descripcion": "Membrillo y pastelera",
+    "precio": 5500,
+    "img": "imagenes/facturas con membrillo y pastelera.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Pan casero de Barra",
+    "descripcion": "Pan de molde",
+    "precio": 3500,
+    "img": "imagenes/pan-casero-de-barra-2.jpg"
+  }
+]

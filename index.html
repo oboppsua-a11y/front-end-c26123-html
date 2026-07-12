@@ -12,21 +12,33 @@
   </head>
   <body>
     <header>
-      <div class="logo-container">
-        <a href="./index.html" class="logo">LOGO</a>
+      <div class="logo-conteiner">
+        <a href="./index.html" class="logo">
+          <img src="./imagenes/logo.jpg" alt="Shopping de Facturas" />
+          <span class="texto-logo">Shopping de Facturas</span>
+         </a>
       </div>
       <nav class="header-nav">
         <ul>
-          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html">Inicio</a></li>
           <li><a href="./pages/contacto.html">Contacto</a></li>
+          <!--agregar un link al carrito, con un ID para el contador -->
+                <li>
+                    <a href="./pages/carrito.html"class="carrito-icono">
+                      <img src="./imagenes/carrito.jpg" alt="Carrito de compras" class="img-carrito" />
+                        <span id="contador-carrito">0</span>
+                    </a>
+                </li>
+
         </ul>
       </nav>
     </header>
+    
     <main>
       <h1 class="titulo-home text-secondary">
         Bienvenido al shopping de facturas y budines
       </h1>
-      <p class="parrafo" style="max-width: 400px">
+      <p class="parrafo">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum
         voluptas optio laborum quam nihil est reiciendis praesentium error
         nesciunt impedit. Quidem numquam nulla aperiam possimus reiciendis
@@ -37,55 +49,7 @@
 
       <section>
         <h2 class="titulo-producto text-secondary">Nuestros productos</h2>
-        <div class="contenedor-tarjetas">
-          <article class="card text-dark">
-            <img
-              src="./imagenes/budín de naranja.jpg"
-              alt="imagen budin de naranja"
-            />
-            <h3>Budin de naranja</h3>
-            <p>Budin glaseado</p>
-            <p>$6.500</p>
-            <button class="btn bg-secondary text-dark">
-              Agregar al carrito
-            </button>
-          </article>
-
-          <article class="card text-dark">
-            <img src="./imagenes/croissants.jpg" alt="imagen croissants" />
-            <h3>Croissants</h3>
-            <p>rellenos</p>
-            <p>$4.500</p>
-            <button class="btn bg-secondary text-dark">
-              Agregar al carrito
-            </button>
-          </article>
-
-          <article class="card text-dark">
-            <img
-              src="./imagenes/facturas con membrillo y pastelera.jpg"
-              alt="imagen facturas con membrillo y pastelera"
-            />
-            <h3>Facturas con dulce</h3>
-            <p>Membrillo y pastelera</p>
-            <p>$5.500</p>
-            <button class="btn bg-secondary text-dark">
-              Agregar al carrito
-            </button>
-          </article>
-
-          <article class="card text-dark">
-            <img
-              src="./imagenes/Pan-casero-de-barra-2.jpg"
-              alt="imagen pan-casero-de-barra-2"
-            />
-            <h3>Pan casero de Barra</h3>
-            <p>pan de molde</p>
-            <p>$3.500</p>
-            <button class="btn bg-secondary text-dark">
-              Agregar al carrito
-            </button>
-          </article>
+        <div id="contenedor-tarjetas" class="contenedor-tarjetas">
         </div>
       </section>
     </main>
@@ -101,5 +65,7 @@
         </ul>
       </nav>
     </footer>
+    <!--Agregar type module y enlace al index.js-->
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>

@@ -1,212 +1,323 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN GENERAL Y VARIABLES
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 body {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.6rem;
-  background: #abd8b581;
-  color: #6f53d4ec;
-
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfbf7; /* Un fondo cálido, ideal para una panadería/pastelería */
+  color: #333333;
+  line-height: 1.6;
 }
 
-main {
-  width: 80%;
-  margin: auto;
-  padding-bottom: 2rem;
-
-  flex: 1;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.15;
-  margin: 3rem 0;
-}
-
-h2 {
-  color: #805b0c;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: center;
-  margin: 3rem 0;
-}
-
-.btn {
-  border: none;
-  font-size: 1.6rem;
-  font-weight: bold;
-  padding: 1.6rem;
-  border-radius: 1rem;
-}
-
-header,
-footer {
-  background: #abd8b581;
-  color: #805b0c;
-  width: 100%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.div-logo {
-  margin-left: 2rem;
-  font-weight: bold;
-}
-
-.logo,
-.header-nav ul li a {
-  text-decoration: none;
-  font-size: 3rem;
-  color: inherit;
-  display: inline-block;
-  padding: 2rem;
-}
-
-.header-nav {
-  margin-right: 2rem;
-}
-
-.header-nav ul,
-footer .footer-list {
-  list-style: none;
-
-  display: flex;
-  gap: 2rem;
-}
-
-.footer-list img {
-  width: 5rem;
-  padding: 0.5rem;
-}
-
-/*-------------------------------------------------*/
-/*                  colores                        */
-/*-------------------------------------------------*/
-.bg-primary {
-  background-color: #6e5a8e;
+/* Clases de utilidad que ya usas en tu HTML */
+.text-secondary {
+  color: #e07a5f; /* Un tono cálido/pastel para destacar títulos (ajustalo a tu paleta) */
 }
 
 .bg-secondary {
-  background-color: #f2c66d;
-}
-
-.text-light {
-  color: #ffffff;
+  background-color: #e07a5f;
 }
 
 .text-dark {
-  color: #2a1e35;
+  color: #333333;
 }
 
-.text-secondary {
-  color: #f2c66d;
+/* ==========================================================================
+   2. HEADER (Cabecera centrada y responsiva)
+   ========================================================================== */
+header, .header {
+  display: flex;
+  flex-direction: column; /* Por defecto apila los elementos en móviles */
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/*-------------------------------------------------*/
-/*                  HOME                           */
-/*-------------------------------------------------*/
-.parrafo {
-  width: 85%;
-  text-align: justify;
+/* Contenedores del Logo (Unificados) */
+.logo-conteiner, .div-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Enlace del logo que agrupa la imagen y el texto */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Separa la imagen del texto */
+  text-decoration: none;
+}
+
+.logo img {
+  width: 60px; /* Tamaño de tu logo redondo */
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Texto "Shopping de Facturas" */
+.texto-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333333;
+  letter-spacing: 0.5px;
+}
+
+/* Menú de Navegación */
+.header-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}
+
+.header-nav ul li a {
+  text-decoration: none;
+  color: #555555;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header-nav ul li a:hover {
+  color: #e07a5f;
+}
+
+/* Icono del Carrito y Contador */
+.carrito-icono {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Separa el icono del número 0 */
+  background-color: #f4f4f4;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.img-carrito {
+  width: 22px;
+  height: auto;
+}
+
+#contador-carrito {
+  font-weight: bold;
+  color: #e07a5f;
+}
+
+/* ==========================================================================
+   3. CONTENIDO PRINCIPAL (Main y Párrafo Ancho)
+   ========================================================================== */
+main {
+  padding: 40px 20px;
+  max-width: 1200px; /* Evita que el contenido general se desparrame en pantallas gigantes */
+  margin: 0 auto;
+}
+
+.titulo-home, .titulo-contacto {
+  text-align: center;
+  margin-bottom: 20px;
   font-size: 2rem;
-  padding: 3rem;
+}
+
+/* Tu párrafo configurado para ocupar casi todo el ancho de la pantalla */
+.parrafo {
+  width: 95%; /* Ocupa casi todo el ancho en móviles y tablets */
+  max-width: 1100px; /* En computadoras se frena aquí para que no sea molesto leer líneas tan largas */
+  margin: 0 auto 40px auto; /* Centrado horizontalmente y con espacio abajo */
+  text-align: center;
+  color: #666666;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   4. SECCIÓN DE PRODUCTOS Y TARJETAS (Home y Carrito)
+   ========================================================================== */
+.titulo-producto {
+  margin-bottom: 25px;
+  border-bottom: 2px solid #f4f4f4;
+  padding-bottom: 10px;
 }
 
 .contenedor-tarjetas {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
 }
 
+/* Tarjeta de producto individual */
 .card {
-  background-color: #8a79a8;
-  width: 30rem;
-
-  border-radius: 1rem;
-  overflow: hidden;
-
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding-bottom: 2rem;
+  justify-content: space-between;
+  border: 1px solid #eeeeee;
 }
 
 .card img {
   width: 100%;
-  height: 20rem;
+  height: 180px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
-/*-------------------------------------------------*/
-/*                  contacto                       */
-/*-------------------------------------------------*/
-.titulo-contacto {
-  margin: 2rem 0;
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
+.card p {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* Botones estándar */
+.btn {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  filter: brightness(0.95);
+}
+
+.btn-eliminar-carrito {
+  background-color: #e63946;
+  color: white;
+}
+
+/* Acciones y Resumen del Carrito */
+.acciones-carrito {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-vaciar-carrito {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 12px 24px;
+}
+
+#resumen-carrito {
+  text-align: right;
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Mensaje de Alerta Carrito Vacío */
+.mensaje-carrito-vacio {
+  text-align: center;
+  grid-column: 1 / -1; /* Ocupa todo el ancho de la grilla */
+  font-size: 1.2rem;
+  color: #999999;
+  padding: 40px 0;
+}
+
+/* ==========================================================================
+   5. FORMULARIO DE CONTACTO
+   ========================================================================== */
 .form-contacto {
-  background-color: #8a79a8;
-  color: #2a1e35;
-  width: 100%;
-  max-width: 50rem;
-  font-size: 2rem;
-  padding: 3rem;
-  border-radius: 1rem;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
 }
 
 .grupo-input {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 3rem;
+  margin-bottom: 20px;
 }
 
-.grupo-input input,
+.grupo-input label {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.grupo-input input, .grupo-input textarea {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
 .grupo-input textarea {
-  border: none;
-  background-color: transparent;
-  border-bottom: solid 2px #2a1e35;
-  margin-bottom: 3rem;
+  height: 120px;
+  resize: none;
 }
 
-.grupo-input textarea {
-  min-height: 10rem;
-  resize: vertical;
+/* ==========================================================================
+   6. FOOTER (Pie de página)
+   ========================================================================== */
+footer {
+  background-color: #333333;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
 }
 
-/*-------------------------------------------------*/
-/*                  MEDIA QUERIES                  */
-/*-------------------------------------------------*/
-@media (max-width: 600px) {
-  header,
-  footer {
-    flex-direction: column;
+footer p {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.footer-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+
+.footer-list img {
+  width: 30px;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+.footer-list img:hover {
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (Pantallas grandes)
+   ========================================================================== */
+@media (min-width: 768px) {
+  header, .header {
+    flex-direction: row; /* En PC pone el logo a un lado y el menú al otro */
+    justify-content: space-between;
+    padding: 15px 40px;
   }
-  .header-nav,
-  .div-logo {
-    margin: 0;
+  
+  /* Centrado absoluto del logo en PC */
+  .logo-conteiner, .div-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header-nav {
+    margin-left: auto; /* Empuja el menú a la derecha de forma prolija */
   }
 }
